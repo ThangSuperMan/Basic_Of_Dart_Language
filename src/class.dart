@@ -40,8 +40,25 @@ class Player {
   }
 }
 
+class Member {
+  late String name;
+  late int age;
+
+  Member({required this.name, required this.age});
+}
+
 void main() {
-  print("hello");
+  // Cascade Notation start
+
+  var member = Member(name: "Thang", age: 20) 
+  .. name = "New name"
+  .. age = 90;
+
+  print("Member name: ${member.name}");
+  print("Member age: ${member.age}");
+
+  // Cascade Notation end
+
 
   // var player = Player("thang", 2000, "Jenny", 20);
   // var player = Player(name: "Thang", xp: 2000, team: "Thang Jenny", age: 20);
@@ -49,12 +66,13 @@ void main() {
   // var bluePlayer = Player.createBluePlayer(name: "Thang handsomd", xp: 2000);
   // bluePlayer.sayHello();
 
-  var redPlayer = Player.createRedPlayer("Thang handsomd", 2000);
+  /* var redPlayer = Player.createRedPlayer("Thang handsomd", 2000); */
 
-  redPlayer.sayHello();
+  /* redPlayer.sayHello(); */
 
   // player.sayHello();
 
   // var player2 = Player("ngoc", 4000);
   // player2.sayHello();
 }
+
