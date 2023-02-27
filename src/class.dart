@@ -1,3 +1,9 @@
+abstract class Human {
+  void walk();
+  void talk();
+  String generateQuote();
+}
+
 class Player {
   late final String name;
   late int xp;
@@ -40,9 +46,25 @@ class Player {
   }
 }
 
-class Member {
+class Member extends Human {
   late String name;
   late int age;
+
+  @override
+  void walk() {
+    print("Walking...");  
+  }
+
+  @override 
+  void talk() {
+    print("Walking...");  
+  }
+
+  @override
+  String generateQuote() {
+    var quote = "Good morning"; 
+    return quote; 
+  }
 
   Member({required this.name, required this.age});
 }
@@ -56,6 +78,8 @@ void main() {
 
   print("Member name: ${member.name}");
   print("Member age: ${member.age}");
+
+  member.walk();
 
   // Cascade Notation end
 
